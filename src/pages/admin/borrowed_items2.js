@@ -1,7 +1,7 @@
 import React from 'react';
+import './borrowed_items2.css';
 
-
-const BorrowedItems = () => {
+const BorrowedItems2 = () => {
   const data = [
     { id: 1, regNo: '20######', name: 'Nimal Perera', faculty: 'Computing', amount: 1 },
     { id: 2, regNo: '20######', name: 'Kamal Perera', faculty: 'Computing', amount: 2 },
@@ -47,4 +47,4 @@ const BorrowedItems = () => {
   );
 };
 
-export default BorrowedItems;
+export default BorrowedItems2;

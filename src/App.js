@@ -1,17 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import RemainItems from './pages/admin/remain_items1';
-import BorrowedItems from './pages/admin/borrowed_items2';
+
+import Dashboard2 from './pages/admin/dashboard2'; 
+import Dashboard3 from './pages/admin/dashboard3'; 
+import RemainItems1 from './pages/admin/remain_items1';
+import BorrowedItems2 from './pages/admin/borrowed_items2';
 import Sidebar from './pages/admin/sidebar';
-import RegistrationPage from './pages/user/Register.js';
+import RegistrationPage from './pages/user/Register';
 
 
 function App() {
   return (
-    <div className="App">
-      <main>
-        <Sidebar/>
-      </main>
+    <div className="APP">
+      <Dashboard3/>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import './RemainItems1.css';
 
 
 
@@ -28,7 +29,9 @@ const SearchBar = ({ onSearch }) => {
   );
 };
 
-const RemainItems = () => {
+
+const RemainItems1 = () => {
+
   // Hardcoded data (to be replaced with backend API data)
   const items = {
     Cricket: [
@@ -85,4 +88,6 @@ const RemainItems = () => {
   );
 };
 
-export default RemainItems;
+
+export default RemainItems1;
+

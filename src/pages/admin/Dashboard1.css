@@ -6,7 +6,7 @@
     font-family: Arial, sans-serif;
     padding: 20px;
   }
-  
+
   /* Header section styling */
   .header {
     display: flex;
@@ -33,11 +33,11 @@
     width: 250px;
     padding: 8px;
     font-size: 16px;
-    border: none; /* Remove the box */
+    border: none; 
     border-bottom: 2px solid #ccc; /* Add only an underline */
     background: none; /* No background color */
     outline: none; /* Remove default outline */
-    box-shadow: none !important; /* Remove any persistent box-shadow */
+    box-shadow: none !important; 
     transition: border-color 0.3s ease;
   }
   

@@ -12,6 +12,7 @@ const Dashboard1 = () => {
     { name: 'Athletics', image: 'path-to-athletics-image.png' },
   ];
 
+  
   return (
     <div className="dashboard">
       <div className="header">

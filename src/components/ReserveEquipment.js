@@ -52,7 +52,7 @@ const ReserveEquipment = () => {
       {/* Image Section */}
       <div className="image-section">
         <img
-          src="runnerup.png" // Replace with your actual image file
+          src="runnerup.jpg" // Replace with your actual image file
           alt="Runner with torch"
           className="runner-image"
         />

@@ -2,6 +2,16 @@
     display: flex;
     font-family: Arial, sans-serif;
   }
+
+  .reserve-container {
+    width: calc(100% - 250px); /* Adjust width considering the sidebar width (250px) */
+    margin-left: 250px; /* Push the content to the right of the sidebar */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+
+
+  }
   
   main {
     flex: 1;

@@ -1,81 +1,81 @@
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #ffffff; /* White background */
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align everything to the top */
-    border-right: 1px solid #e5e7eb; /* Light gray border */
-  }
-  
-  .brand {
-    font-size: 24px;
-    font-weight: 700;
-    color: #000000; /* Dark text for the brand name */
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    flex-grow: 1; /* Allows the menu to grow and take space */
-  }
-  
-  .menu-item {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    color: #6b7280; /* Medium gray text */
-    padding: 10px 15px;
-    margin: 5px 0;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-  }
-  
-  .menu-item.active {
-    background-color: #eef2f8; /* Light blue background for active */
-    color: #0d1c3b; /* Dark blue text for active */
-  }
-  
-  .menu-item .icon {
-    margin-right: 10px;
-    font-size: 20px;
-  }
-  
-  .menu-item:hover {
-    background-color: #f1f5f9; /* Slight hover effect */
-  }
-  
-  .separator {
-    height: 1px;
-    width: 100%;
-    background-color: #e5e7eb; /* Light gray separator */
-    margin: 20px 0;
-  }
-  
-  .logout {
-    font-size: 16px;
-    color: #6b7280; /* Medium gray text */
-    background: none;
-    border: none;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 50px 50px;
-    border-radius: 6px;
-    margin-top: px; /* Adds space above the logout button */
-    transition: background-color 0.2s ease, color 0.2s ease;
-  }
-  
-  .logout:hover {
-    background-color: #f1f5f9; /* Hover effect for logout */
-  }
-  
-  .logout .icon {
-    margin-right: 10px;
-    font-size: 20px;
-  }
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff; 
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-right: 1px solid #e5e7eb; 
+  position: fixed; 
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000; 
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; 
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #6b7280; 
+  padding: 10px 15px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-item.active {
+  background-color: #eef2f8; 
+  color: #0d1c3b; 
+}
+
+.menu-item .icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.menu-item:hover {
+  background-color: #f1f5f9; 
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: #e5e7eb; 
+  margin: 20px 0;
+}
+
+.logout {
+  font-size: 16px;
+  color: #6b7280; 
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.logout:hover {
+  background-color: #f1f5f9; 
+}
+
+.logout .icon {
+  margin-right: 10px;
+  font-size: 20px;
+}

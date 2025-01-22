@@ -1,6 +1,6 @@
 import React from "react";
 import "./remain_items2.css";
-//import runnerup from "../../assets/runnerup.png"; // Adjusted path
+import runnerup from "../../assets/runnerup.png"; // Adjusted path
 
 const Remain_items2 = () => {
   return (

@@ -1,6 +1,8 @@
 
 import React from "react";  
-import './Register.css';  
+import './Register.css';
+
+
 
 const RegistrationPage = () => {  
   return (  

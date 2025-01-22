@@ -5,9 +5,11 @@ body {
   }
   
   .main-content {
-    display: flex;
-    padding: 2rem;
-    gap: 2rem;
+    width: calc(100% - 250px); 
+    margin-left: 250px;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
   }
   
   .borrowed-items {

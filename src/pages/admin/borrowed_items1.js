@@ -1,14 +1,14 @@
 import React from "react";
 import "./BorrowedItems.css"; 
 
-const App = () => {
-  const borrowedItems = [
+
+  const BorrowedItems = [
     { date: "07/01/2025", name: "Cricket Hard ball Bat", image: "hardbat.jpg" },
     { date: "10/01/2025", name: "Netball", image: "netball.jpg" },
   ];
 
   return (
-    <div className="app">
+    
       <div className="main-content">
         {/* Borrowed Items Section */}
         <div className="borrowed-items">
@@ -35,8 +35,8 @@ const App = () => {
           />
         </div>
       </div>
-    </div>
+   
   );
-};
 
-export default App;
+
+export default BorrowedItems;

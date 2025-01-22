@@ -9,24 +9,29 @@ import BorrowedItems2 from './pages/admin/borrowed_items2';
 import Sidebar from './pages/admin/sidebar';
 import RegistrationPage from './pages/user/Register';
 import Home from './pages/user/Home';
+import Dashboard1 from './pages/admin/dashboard1';
+
 
 function App() {
   return (
     <Router>
       <div style={{ display: 'flex' }}>
-        <Sidebar />ssss
+        <Sidebar />
         <div style={{ flex: 1, padding: '20px' }}>
           <Routes>
-
-            <Route path="/" element={<Navigate to="/Home" />} />
+            {/* Changed initial route to redirect to /dashboard2 */}
+            <Route path="/" element={<Navigate to="/remain_items1" />} />
             <Route path="/dashboard3" element={<Dashboard3 />} />
             <Route path="/dashboard2" element={<Dashboard2 />} />
             <Route path="/remain_items1" element={<RemainItems1 />} />
             <Route path="/borrowed_items2" element={<BorrowedItems2 />} />
             <Route path="/Register" element={<RegistrationPage />} />
-            <Route path="/remain_items2" element={< ReserveEquipment/>} />
+            <Route path="/remain_items2" element={<ReserveEquipment />} />
             <Route path="/Home" element={<Home />} />
+            <Route path="/dashboard1" element={<Dashboard1 />} />
+            <Route path="/borrowed_items1" element={<BorrowedItems2/>} />
 
+           
           </Routes>
         </div>
       </div>

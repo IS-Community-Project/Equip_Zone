@@ -1,42 +1,42 @@
-import React from "react";
-import "./BorrowedItems.css"; 
+import React from 'react';
+import './borrowed_items1.css'; // Importing the CSS file
 
-const App = () => {
-  const borrowedItems = [
-    { date: "07/01/2025", name: "Cricket Hard ball Bat", image: "hardbat.jpg" },
-    { date: "10/01/2025", name: "Netball", image: "netball.jpg" },
+const BorrowedItems = () => {
+  const borrowedData = [
+    { name: 'Normal Bat', count: 3 },
+    { name: 'Cricket Hardball Bat', count: 4 },
+    { name: 'Normal Cricket Ball', count: 2 },
+    { name: 'Cricket Hard Ball', count: 1 },
+    { name: 'Football', count: 2 },
+    { name: 'Football Net', count: 1 },
+    { name: 'Netball', count: 1 },
+    { name: 'Netball Net', count: 1 },
   ];
 
   return (
-    <div className="app">
-      <div className="main-content">
-        {/* Borrowed Items Section */}
-        <div className="borrowed-items">
-          <h2>Borrowed Items</h2>
-          <div className="items-list">
-            {borrowedItems.map((item, index) => (
-              <div key={index} className="item-card">
-                <img src={item.image} alt={item.name} className="item-image" />
-                <div className="item-details">
-                  <p className="item-date">{item.date}</p>
-                  <p className="item-name">{item.name}</p>
+    <div className="borrowed-container">
+      
+       
+      
+      <main className="main-content">
+        <h1>Borrowed items</h1>
+        <div className="borrowed-section">
+          <h2>Cricket</h2>
+          <div className="borrowed-card">
+            <h3>Borrowed items (Over-all)</h3>
+            <div className="items-grid">
+              {borrowedData.map((item, index) => (
+                <div className="item-card" key={index}>
+                  <div>{item.name}</div>
+                  <div className="item-count">{item.count}</div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* Image Section */}
-        <div className="image-section">
-          <img
-            src="BIU.png" // Replace this with your actual image file
-            alt="Sports"
-            className="sports-image"
-          />
-        </div>
-      </div>
+      </main>
     </div>
   );
 };
 
-export default App;
+export default BorrowedItems;

@@ -8,12 +8,13 @@ import BorrowedItems2 from './pages/admin/borrowed_items2';
 import Sidebar from './pages/admin/sidebar';
 import RegistrationPage from './pages/user/Register';
 import Dashboard1 from './pages/admin/dashboard1'; 
+import LoginPage from './pages/user/Login';
 
 
 function App() {
   return (
     <div className="APP">
-      <Dashboard1/>
+      <LoginPage/>
     </div>
   );
 }

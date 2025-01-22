@@ -9,7 +9,11 @@ import BorrowedItems2 from './pages/admin/borrowed_items2';
 import Sidebar from './pages/admin/sidebar';
 import RegistrationPage from './pages/user/Register';
 import Home from './pages/user/Home';
+
 import Dashboard1 from './pages/admin/dashboard1';
+
+
+import BorrowedItems from './pages/admin/borrowed_items1';
 
 
 function App() {
@@ -19,8 +23,11 @@ function App() {
         <Sidebar />
         <div style={{ flex: 1, padding: '20px' }}>
           <Routes>
+
             {/* Changed initial route to redirect to /dashboard2 */}
             <Route path="/" element={<Navigate to="/remain_items1" />} />
+
+
             <Route path="/dashboard3" element={<Dashboard3 />} />
             <Route path="/dashboard2" element={<Dashboard2 />} />
             <Route path="/remain_items1" element={<RemainItems1 />} />
@@ -28,8 +35,11 @@ function App() {
             <Route path="/Register" element={<RegistrationPage />} />
             <Route path="/remain_items2" element={<ReserveEquipment />} />
             <Route path="/Home" element={<Home />} />
+
             <Route path="/dashboard1" element={<Dashboard1 />} />
             <Route path="/borrowed_items1" element={<BorrowedItems2/>} />
+            <Route path="/borrowed_items1" element={<BorrowedItems/>} />
+
 
            
           </Routes>

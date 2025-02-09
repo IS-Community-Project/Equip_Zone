@@ -12,6 +12,9 @@ import Home from './pages/user/Home';
 import Dashboard1 from './pages/admin/dashboard1';
 import BorrowedItems from './pages/admin/borrowed_items1';
 import LoginPage from './pages/user/Login';
+import BorrowedItems_user from './pages/user/borrowed_items_user';
+import RemainItems1User from './pages/user/remain_items1_user';
+import Home2 from './pages/user/Home2';
 
 function App() {
   return (
@@ -25,16 +28,19 @@ function MainLayout() {
   const location = useLocation();
 
   // Define routes where Sidebar should be HIDDEN
-  const hideSidebarRoutes = ["/", "/Home", "/login", "/Register"];
+  const hideSidebarRoutes = ["/", "/Home", "/login", "/Register", "/remain_items2", "/borrowed_items_user", "/remain_items1_user" ,"/Home2"];
 
   return (
     <div style={{ display: 'flex' }}>
+      
       {/* Only render Sidebar if the current path is NOT in hideSidebarRoutes */}
       {!hideSidebarRoutes.includes(location.pathname) && <Sidebar />}
 
+      
+
       <div style={{ flex: 1, padding: '20px' }}>
         <Routes>
-          <Route path="/" element={<Navigate to="/Register" />} />
+          <Route path="/" element={<Navigate to="/dashboard1" />} />
           <Route path="/dashboard3" element={<Dashboard3 />} />
           <Route path="/dashboard2" element={<Dashboard2 />} />
           <Route path="/remain_items1" element={<RemainItems1 />} />
@@ -42,9 +48,12 @@ function MainLayout() {
           <Route path="/Register" element={<RegistrationPage />} />
           <Route path="/remain_items2" element={<ReserveEquipment />} />
           <Route path="/Home" element={<Home />} />
+          <Route path="/Home2" element={<Home2 />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/dashboard1" element={<Dashboard1 />} />
+          <Route path="/borrowed_items_user" element={<BorrowedItems_user />} />
           <Route path="/borrowed_items1" element={<BorrowedItems />} />
+          <Route path="/remain_items1_user" element={<RemainItems1User />} />
         </Routes>
       </div>
     </div>

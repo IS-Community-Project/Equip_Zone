@@ -8,7 +8,7 @@ import directorImage from '../../assets/Ellipse 26.png';
 import assistantManagerImage from '../../assets/Ellipse 27.png';
 import technicalOfficerImage from '../../assets/Ellipse 28.png';
 
-function Home() {
+function Home2() {
   return (
     <div className="home-container">
       {/* Navbar Component */}
@@ -19,8 +19,8 @@ function Home() {
           <li><Link to="/remain_items1_user">Remaining Items</Link></li>
         </ul>
         <div className="nav-right">
-          <Link to="/login" className="btn">Login</Link>
-          <Link to="/Register" className="btn">Signup</Link>
+          <Link to="/Home" className="btn">Logout</Link>
+          
         </div>
       </nav>
       
@@ -93,4 +93,4 @@ const ContactInfo = () => {
   );
 };
 
-export default Home;
+export default Home2;

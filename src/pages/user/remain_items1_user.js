@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Use useNavigate for navigation
-import './RemainItems1.css';
+import './RemainItems1User.css';
+import { Link } from 'react-router-dom';
+
+
 
 const SearchBar = ({ onSearch }) => {
   const [searchText, setSearchText] = useState("");
@@ -27,7 +30,7 @@ const SearchBar = ({ onSearch }) => {
   );
 };
 
-const BorrowedItems = () => {
+const RemainItems1User = () => {
   const navigate = useNavigate(); // Use useNavigate instead of useHistory
 
   const items = {
@@ -60,20 +63,34 @@ const BorrowedItems = () => {
 
   const handleItemClick = (item) => {
     // Use navigate to redirect to the RemainItems2 page and pass the selected item as state
-    navigate('/borrowed_items2', { state: { item } });
+    navigate('/remain_items2', { state: { item } });
   };
 
   return (
+
+
+    
     <>
       <div className="top-box">
-        <h2>Borrowed Items</h2>
+        
+        <nav className="navbar">
+        <ul>
+          <li><Link to="/Home">Home</Link></li>
+          <li><Link to="/borrowed_items_user">Borrowed Items</Link></li>
+          <li><Link to="/remain_items1_user">Remaining Items</Link></li>
+        </ul>
+        <div className="nav-right">
+          <Link to="/Home" className="btn">logout</Link>
+         
+        </div>
+      </nav>
       </div>
 
       <div className="remain-items">
         <div className="header-container">
           <h1 className="header-title">
-           Borrowed Items(over-all)
-            
+            Remain Sports Items
+            <span className="availability">Availability (Remain)</span>
           </h1>
           <SearchBar onSearch={handleSearch} />
         </div>
@@ -100,8 +117,4 @@ const BorrowedItems = () => {
   );
 };
 
-export default BorrowedItems;
-
-
-
-
+export default RemainItems1User;

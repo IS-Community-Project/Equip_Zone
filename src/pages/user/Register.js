@@ -59,7 +59,7 @@ const RegistrationPage = () => {
             />
             <input
               type="text"
-              placeholder="NIC (National Identity Card)"
+              placeholder="Student ID"
               value={nic}
               onChange={(e) => setNic(e.target.value)}
               required

@@ -27,7 +27,7 @@ const LoginPage = () => {
       alert("Login successful");
 
       // Redirect to home page
-      navigate("/Home"); // You can change "/home" to any path you want to redirect to
+      navigate("/Home2"); // You can change "/home" to any path you want to redirect to
     } catch (error) {
       setErrorMessage(error.response ? error.response.data.detail : "Something went wrong.");
     }

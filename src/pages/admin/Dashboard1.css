@@ -4,10 +4,8 @@
   margin-left: 250px; /* Push the content to the right of the sidebar */
   font-family: Arial, sans-serif;
   padding: 20px;
-
   box-sizing: border-box; /* Ensure padding does not affect the total width */
 }
-
 
 /* Header section styling */
 .header {
@@ -26,7 +24,7 @@
 
 .title .availability {
   font-size: 14px;
-  color: #4CAF50; /* Green color for availability */
+  color: #75ABAD; /* Green color for availability */
   margin: 0;
 }
 

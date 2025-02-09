@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Use useNavigate for navigation
 import './RemainItems1.css';
 
 const SearchBar = ({ onSearch }) => {
@@ -9,6 +10,7 @@ const SearchBar = ({ onSearch }) => {
     onSearch(event.target.value);
   };
 
+  
   return (
     <div className="search-bar">
       <input
@@ -26,6 +28,8 @@ const SearchBar = ({ onSearch }) => {
 };
 
 const RemainItems1 = () => {
+  const navigate = useNavigate(); // Use useNavigate instead of useHistory
+
   const items = {
     Cricket: [
       { name: 'Normal bat', count: 5 },
@@ -54,6 +58,11 @@ const RemainItems1 = () => {
     );
   };
 
+  const handleItemClick = (item) => {
+    // Use navigate to redirect to the RemainItems2 page and pass the selected item as state
+    navigate('/remain_items2', { state: { item } });
+  };
+
   return (
     <>
       <div className="top-box">
@@ -74,7 +83,11 @@ const RemainItems1 = () => {
             <div className="category-box" key={category}>
               <h3>{category}</h3>
               {filterItems(items[category]).map((item, index) => (
-                <div className="item" key={index}>
+                <div 
+                  className="item" 
+                  key={index} 
+                  onClick={() => handleItemClick(item)} // Handle item click
+                >
                   <span>{item.name}</span>
                   <span className="count">{item.count}</span>
                 </div>

@@ -9,31 +9,22 @@ const BorrowedItems2 = () => {
     { id: 4, regNo: '20######', name: 'Nimal Fernando', faculty: 'Computing', amount: 1 },
   ];
 
-  // State to track the current borrowed items list
   const [borrowedItems, setBorrowedItems] = useState(initialData);
 
   const handleRemove = (id) => {
-    // Filter out the removed item
     const updatedItems = borrowedItems.filter(item => item.id !== id);
     setBorrowedItems(updatedItems);
-
-    // TODO: Remove from the database
-    // fetch('/api/removeBorrowedItem', {
-    //   method: 'POST',
-    //   body: JSON.stringify({ id }),
-    //   headers: { 'Content-Type': 'application/json' }
-    // });
   };
 
   return (
     <div className="content">
-      <h1>Borrowed items</h1>
+      <h1>Borrowed Items</h1>
       <h2>Normal Bats</h2>
       <table>
         <thead>
           <tr>
             <th>Registration No</th>
-            <th>Name of the Student</th>
+            <th>Name</th>
             <th>Faculty</th>
             <th>Amount</th>
             <th>Action</th>

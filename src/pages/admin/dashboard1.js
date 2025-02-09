@@ -1,17 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Dashboard1.css';
+
+// Import images
+import cricketImage from '../../assets/cricketImage.png';
+import netballImage from '../../assets/netballImage.png';
+import footballImage from '../../assets/footballImage.png';
+import badmintonImage from '../../assets/badmintonImage.png';
+import tableTennisImage from '../../assets/tableTennisImage.png';
+import athleticsImage from '../../assets/athleticsImage.png';
 
 const Dashboard1 = () => {
   const navigate = useNavigate();
 
   const sportsItems = [
-    { name: 'Cricket', image: 'path-to-cricket-image.png', path: '/dashboard2' },
-    { name: 'Netball', image: 'path-to-netball-image.png' },
-    { name: 'Football', image: 'path-to-football-image.png'},
-    { name: 'Badminton', image: 'path-to-badminton-image.png' },
-    { name: 'Table Tennis', image: 'path-to-table-tennis-image.png' },
-    { name: 'Athletics', image: 'path-to-athletics-image.png' },
+    { name: 'Cricket', image: cricketImage, path: '/dashboard2' },
+    { name: 'Netball', image: netballImage },
+    { name: 'Football', image: footballImage },
+    { name: 'Badminton', image: badmintonImage },
+    { name: 'Table Tennis', image: tableTennisImage },
+    { name: 'Athletics', image: athleticsImage },
   ];
 
   return (
@@ -30,8 +38,8 @@ const Dashboard1 = () => {
           <div 
             className="sports-item" 
             key={index} 
-            onClick={() => navigate(item.path)}
-            style={{ cursor: 'pointer' }}
+            onClick={() => item.path && navigate(item.path)}
+            style={{ cursor: item.path ? 'pointer' : 'default' }}
           >
             <div className="name-box">{item.name}</div>
             <img src={item.image} alt={item.name} />
@@ -41,8 +49,5 @@ const Dashboard1 = () => {
     </div>
   );
 };
-
-const dashboard2 = () => <h2>Borrowed Items - Cricket</h2>;
-
 
 export default Dashboard1;

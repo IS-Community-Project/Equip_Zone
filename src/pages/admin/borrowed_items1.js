@@ -1,42 +1,45 @@
-import React from "react";
-import "./BorrowedItems.css"; 
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './borrowed_items1.css';
 
-const App = () => {
-  const borrowedItems = [
-    { date: "07/01/2025", name: "Cricket Hard ball Bat", image: "hardbat.jpg" },
-    { date: "10/01/2025", name: "Netball", image: "netball.jpg" },
-  ];
+const borrowedItemsData = {
+  cricket: [
+    { name: 'Normal Bat', quantity: 3 },
+    { name: 'Normal Cricket Ball', quantity: 2 },
+    { name: 'Batting Gloves', quantity: 2 },
+    { name: 'Wicketkeeping Pads', quantity: 1 },
+    { name: 'Batting Pads', quantity: 1 },
+    { name: 'Cricket Hard Ball', quantity: 4 },
+    { name: 'Helmet (with Grill)', quantity: 1 },
+  ]
+};
+
+const BorrowedItems1 = () => {
+  const navigate = useNavigate();
+
+  const handleItemClick = (itemName) => {
+    // Navigate to BorrowedItems2 and pass item name as a parameter
+    navigate('/borrowed_items2', { state: { selectedItem: itemName } });
+  };
 
   return (
-    <div className="app">
-      <div className="main-content">
-        {/* Borrowed Items Section */}
-        <div className="borrowed-items">
-          <h2>Borrowed Items</h2>
-          <div className="items-list">
-            {borrowedItems.map((item, index) => (
-              <div key={index} className="item-card">
-                <img src={item.image} alt={item.name} className="item-image" />
-                <div className="item-details">
-                  <p className="item-date">{item.date}</p>
-                  <p className="item-name">{item.name}</p>
-                </div>
-              </div>
-            ))}
+    <div className="borrowed-items-container">
+      <h2 className="title">Borrowed Items (Overall)</h2>
+      <div className="items-table">
+        {borrowedItemsData.cricket.map((item, index) => (
+          <div
+            key={index}
+            className="item-row"
+            onClick={() => handleItemClick(item.name)}
+            style={{ cursor: 'pointer' }}
+          >
+            <span className="item-name">{item.name}</span>
+            <span className="item-quantity">{item.quantity}</span>
           </div>
-        </div>
-
-        {/* Image Section */}
-        <div className="image-section">
-          <img
-            src="BIU.png" // Replace this with your actual image file
-            alt="Sports"
-            className="sports-image"
-          />
-        </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default App;
+export default BorrowedItems1;

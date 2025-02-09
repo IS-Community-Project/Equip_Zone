@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './dashboard2.css';
 
-
 const Dashboard2 = () => {
+  const navigate = useNavigate();
+
   const items = {
     Cricket: [
       { name: 'Cricket Hard Ball Bat', count: 5 },
@@ -31,8 +33,12 @@ const Dashboard2 = () => {
               ))}
             </ul>
             <div className="buttons">
-              <button className="remove-button">Remove</button>
-              <button className="add-button">Add</button>
+              <button className="remove-button" onClick={() => navigate('/dashboard3')}>
+                Remove
+              </button>
+              <button className="add-button" onClick={() => navigate('/dashboard3')}>
+                Add
+              </button>
             </div>
           </div>
 
@@ -49,7 +55,9 @@ const Dashboard2 = () => {
               ))}
             </ul>
             <div className="buttons">
-              <button className="add-button">Add</button>
+              <button className="add-button" onClick={() => navigate('/dashboard3')}>
+                Add
+              </button>
             </div>
           </div>
         </div>
@@ -58,4 +66,4 @@ const Dashboard2 = () => {
   );
 };
 
-export default Dashboard2; 
+export default Dashboard2;

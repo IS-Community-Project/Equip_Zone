@@ -1,62 +1,96 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css'; 
+import image from '../../assets/Frame 6.png'; 
+
+// Import local images for team members
+import directorImage from '../../assets/Ellipse 26.png';
+import assistantManagerImage from '../../assets/Ellipse 27.png';
+import technicalOfficerImage from '../../assets/Ellipse 28.png';
 
 function Home() {
   return (
-    <div className="container">
-      <header className="navbar">
+    <div className="home-container">
+      {/* Navbar Component */}
+      <nav className="navbar">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#borrowed-items">Borrowed Items</a></li>
-          <li><a href="#remaining-items">Remaining Items</a></li>
-          <li className="right"><a href="#login">Login</a></li>
-          <li className="right"><a href="#signup">Signup</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/borrowed-items">Borrowed Items</Link></li>
+          <li><Link to="/remain_items1">Remaining Items</Link></li>
         </ul>
-      </header>
+        <div className="nav-right">
+          <Link to="/login" className="btn">Login</Link>
+          <Link to="/Register" className="btn">Signup</Link>
+        </div>
+      </nav>
       
-      <div className="image-section">
-        <img src="image.png" alt="Group Activity" />
-      </div>
+      {/* Image Section */}
+      <section className="image-section">
+        <img src={image} alt="Group Activity" />
+      </section>
 
-      <div className="details-section">
-        <div className="opening-hours">
-          <h3>Opening Hours</h3>
-          <table>
-            <tbody>
-              <tr><td>Monday</td><td></td></tr>
-              <tr><td>Tuesday</td><td></td></tr>
-              <tr><td>Wednesday</td><td></td></tr>
-              <tr><td>Thursday</td><td></td></tr>
-              <tr><td>Friday</td><td></td></tr>
-              <tr><td>Saturday</td><td></td></tr>
-              <tr><td>Sunday</td><td></td></tr>
-            </tbody>
-          </table>
+      {/* Content Section */}
+      <section className="content-section">
+        <div className="info-container">
+          <OpeningHours />
+          <ContactInfo />
         </div>
-
-        <div className="contact-info">
-          <div className="person-card">
-            <img src="director-image.png" alt="Director" />
-            <p><strong>Director</strong></p>
-            <p>Mr.V.Lakmal</p>
-            <p>078-8976543</p>
-          </div>
-          <div className="person-card">
-            <img src="assistant-manager-image.png" alt="Assistant Manager" />
-            <p><strong>Assistant Manager</strong></p>
-            <p>Mrs.M Mahesha</p>
-            <p>070-8976543</p>
-          </div>
-          <div className="person-card">
-            <img src="technical-officer-image.png" alt="Technical Officer" />
-            <p><strong>Technical Officer</strong></p>
-            <p>Mr.V.S.Silva</p>
-            <p>076-8976543</p>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   );
 }
+
+/* Component: Opening Hours */
+const OpeningHours = () => {
+  const hours = [
+    { day: "Monday", time: "8.00AM–4.00PM" },
+    { day: "Tuesday", time: "8.00AM–4.00PM" },
+    { day: "Wednesday", time: "8.00AM–4.00PM" },
+    { day: "Thursday", time: "8.00AM–4.00PM" },
+    { day: "Friday", time: "8.00AM–4.00PM" },
+    { day: "Saturday", time: "9.00AM–4.00PM" },
+    { day: "Sunday", time: "9.00AM–4.00PM" },
+  ];
+
+  return (
+    <div className="opening-hours">
+      <h3>Opening Hours</h3>
+      <table>
+        <tbody>
+          {hours.map((entry, index) => (
+            <tr key={index}>
+              <td>{entry.day}</td>
+              <td>{entry.time}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+/* Component: Contact Information */
+const ContactInfo = () => {
+  const people = [
+    { name: "Mr. V. Lakmal", role: "Director", phone: "078-8976543", img: directorImage },
+    { name: "Mrs. M. Mahesha", role: "Assistant Manager", phone: "070-8976543", img: assistantManagerImage },
+    { name: "Mr. V. S. Silva", role: "Technical Officer", phone: "076-8976543", img: technicalOfficerImage },
+  ];
+
+  return (
+    <div className="contact-info">
+      <div className="person-row">
+        {people.map((person, index) => (
+          <div className="person-card" key={index}>
+            <img src={person.img} alt={person.role} />
+            <p><strong>{person.role}</strong></p>
+            <p>{person.name}</p>
+            <p>{person.phone}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Home;

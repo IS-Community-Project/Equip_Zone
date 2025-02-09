@@ -1,16 +1,39 @@
 import React, { useState } from "react";
 import './dashboard3.css';
 
-
-
 function Dashboard3() {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
+  const [showNotification, setShowNotification] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Equipment Name:", name);
-    console.log("Quantity:", quantity);
+
+    // Prepare data for saving
+    const equipmentData = { name, quantity };
+
+    try {
+      // Uncomment and replace this part when adding database functionality
+      // await axios.post("http://localhost:5000/api/equipment", equipmentData);
+      
+      console.log("Equipment Name:", name);
+      console.log("Quantity:", quantity);
+
+      // Show success notification
+      setShowNotification(true);
+
+      // Clear input fields
+      setName("");
+      setQuantity("");
+
+      // Hide notification after 2 seconds
+      setTimeout(() => {
+        setShowNotification(false);
+      }, 2000);
+      
+    } catch (error) {
+      console.error("Error saving data:", error);
+    }
   };
 
   return (
@@ -42,6 +65,13 @@ function Dashboard3() {
               </div>
               <button type="submit" className="save-button">Save</button>
             </form>
+
+            {/* Notification Message */}
+            {showNotification && (
+              <div className="notification">
+                ✅ Done!
+              </div>
+            )}
           </div>
           <div className="image-container">
             <img

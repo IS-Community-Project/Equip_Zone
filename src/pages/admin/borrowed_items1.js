@@ -1,43 +1,45 @@
 import React from 'react';
-import './borrowed_items1.css'; // Importing the CSS file
+import { useNavigate } from 'react-router-dom';
+import './borrowed_items1.css';
 
-const BorrowedItems = () => {
-  const borrowedData = [
-    { name: 'Normal Bat', count: 3 },
-    { name: 'Cricket Hardball Bat', count: 4 },
-    { name: 'Normal Cricket Ball', count: 2 },
-    { name: 'Cricket Hard Ball', count: 1 },
-    { name: 'Football', count: 2 },
-    { name: 'Football Net', count: 1 },
-    { name: 'Netball', count: 1 },
-    { name: 'Netball Net', count: 1 },
-  ];
+const borrowedItemsData = {
+  cricket: [
+    { name: 'Normal Bat', quantity: 3 },
+    { name: 'Normal Cricket Ball', quantity: 2 },
+    { name: 'Batting Gloves', quantity: 2 },
+    { name: 'Wicketkeeping Pads', quantity: 1 },
+    { name: 'Batting Pads', quantity: 1 },
+    { name: 'Cricket Hard Ball', quantity: 4 },
+    { name: 'Helmet (with Grill)', quantity: 1 },
+  ]
+};
+
+const BorrowedItems1 = () => {
+  const navigate = useNavigate();
+
+  const handleItemClick = (itemName) => {
+    // Navigate to BorrowedItems2 and pass item name as a parameter
+    navigate('/borrowed_items2', { state: { selectedItem: itemName } });
+  };
 
   return (
-    <div className="borrowed-container">
-      
-       
-      
-      <main className="main-content">
-        <h1>Borrowed items</h1>
-        <div className="borrowed-section">
-          <h2>Cricket</h2>
-          <div className="borrowed-card">
-            <h3>Borrowed items (Over-all)</h3>
-            <div className="items-grid">
-              {borrowedData.map((item, index) => (
-                <div className="item-card" key={index}>
-                  <div>{item.name}</div>
-                  <div className="item-count">{item.count}</div>
-                </div>
-              ))}
-            </div>
+    <div className="borrowed-items-container">
+      <h2 className="title">Borrowed Items (Overall)</h2>
+      <div className="items-table">
+        {borrowedItemsData.cricket.map((item, index) => (
+          <div
+            key={index}
+            className="item-row"
+            onClick={() => handleItemClick(item.name)}
+            style={{ cursor: 'pointer' }}
+          >
+            <span className="item-name">{item.name}</span>
+            <span className="item-quantity">{item.quantity}</span>
           </div>
-        </div>
-      </main>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default BorrowedItems;
-
+export default BorrowedItems1;

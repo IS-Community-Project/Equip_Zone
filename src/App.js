@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 
 import Dashboard2 from './pages/admin/dashboard2'; 
 import Dashboard3 from './pages/admin/dashboard3'; 
@@ -9,43 +9,45 @@ import BorrowedItems2 from './pages/admin/borrowed_items2';
 import Sidebar from './pages/admin/sidebar';
 import RegistrationPage from './pages/user/Register';
 import Home from './pages/user/Home';
-
 import Dashboard1 from './pages/admin/dashboard1';
-
-
 import BorrowedItems from './pages/admin/borrowed_items1';
-
+import LoginPage from './pages/user/Login';
 
 function App() {
   return (
     <Router>
-      <div style={{ display: 'flex' }}>
-        <Sidebar />
-        <div style={{ flex: 1, padding: '20px' }}>
-          <Routes>
-
-            {/* Changed initial route to redirect to /dashboard2 */}
-            <Route path="/" element={<Navigate to="/remain_items1" />} />
-
-
-            <Route path="/dashboard3" element={<Dashboard3 />} />
-            <Route path="/dashboard2" element={<Dashboard2 />} />
-            <Route path="/remain_items1" element={<RemainItems1 />} />
-            <Route path="/borrowed_items2" element={<BorrowedItems2 />} />
-            <Route path="/Register" element={<RegistrationPage />} />
-            <Route path="/remain_items2" element={<ReserveEquipment />} />
-            <Route path="/Home" element={<Home />} />
-
-            <Route path="/dashboard1" element={<Dashboard1 />} />
-            <Route path="/borrowed_items1" element={<BorrowedItems2/>} />
-            <Route path="/borrowed_items1" element={<BorrowedItems/>} />
-
-
-           
-          </Routes>
-        </div>
-      </div>
+      <MainLayout />
     </Router>
+  );
+}
+
+function MainLayout() {
+  const location = useLocation();
+
+  // Define routes where Sidebar should be HIDDEN
+  const hideSidebarRoutes = ["/", "/Home", "/login", "/Register"];
+
+  return (
+    <div style={{ display: 'flex' }}>
+      {/* Only render Sidebar if the current path is NOT in hideSidebarRoutes */}
+      {!hideSidebarRoutes.includes(location.pathname) && <Sidebar />}
+
+      <div style={{ flex: 1, padding: '20px' }}>
+        <Routes>
+          <Route path="/" element={<Navigate to="/Register" />} />
+          <Route path="/dashboard3" element={<Dashboard3 />} />
+          <Route path="/dashboard2" element={<Dashboard2 />} />
+          <Route path="/remain_items1" element={<RemainItems1 />} />
+          <Route path="/borrowed_items2" element={<BorrowedItems2 />} />
+          <Route path="/Register" element={<RegistrationPage />} />
+          <Route path="/remain_items2" element={<ReserveEquipment />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/dashboard1" element={<Dashboard1 />} />
+          <Route path="/borrowed_items1" element={<BorrowedItems />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 

@@ -203,4 +203,17 @@ body {
     border-radius: 10px;
     object-fit: cover;
   }
+  .notification {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    text-align: center;
+  }
   
